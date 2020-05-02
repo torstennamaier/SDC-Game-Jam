@@ -36,20 +36,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &770948286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2470015713778462749}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5ab4434cd92f5642a03a22047a03cc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  impactCanvas: {fileID: 0}
-  impactTime: 0.3
 --- !u!114 &770948287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoint: 100
   scoreIncrease: 1
-  deathPickUp: {fileID: 0}
+  deathPickUp: {fileID: 6253128821461147837, guid: 65e61281f03f9a044b5cb7b6baa29ab7,
+    type: 3}
   timeTillDestroy: 2
 --- !u!114 &770948288
 MonoBehaviour:

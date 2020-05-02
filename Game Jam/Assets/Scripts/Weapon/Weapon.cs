@@ -18,6 +18,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AudioSource shootSound;
 
     bool canShoot = true;
+    GameObject player;
 
     private void OnEnable()
     {
@@ -27,7 +28,7 @@ public class Weapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -77,12 +78,13 @@ public class Weapon : MonoBehaviour
             CreateHitImpact(hit);
             if (hit.transform.GetComponent<EnemyHealth>() != false)
             {
+                player.GetComponent<DisplayDamage>().ShowDamageDone();
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(damage);
-                target.GetComponent<DisplayDamage>().ShowDamageImpact();
             }
             else if (hit.transform.GetComponent<Clock>() != false)
             {
+                player.GetComponent<DisplayDamage>().ShowDamageDone();
                 Clock clock = hit.transform.GetComponent<Clock>();
                 clock.OnShot();
             }

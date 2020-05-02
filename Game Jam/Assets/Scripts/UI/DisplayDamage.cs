@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class DisplayDamage : MonoBehaviour
 {
-    [SerializeField] Canvas impactCanvas;
+    [SerializeField] Canvas damageTakenCanvas;
     [SerializeField] float impactTime = 0.3f;
+    [SerializeField] Canvas damageDoneCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        impactCanvas.enabled = false;
+        damageTakenCanvas.enabled = false;
+        damageDoneCanvas.enabled = false;
     }
 
     public void ShowDamageImpact()
@@ -20,9 +22,21 @@ public class DisplayDamage : MonoBehaviour
 
     IEnumerator ShowDamage()
     {
-        impactCanvas.enabled = true;
+        damageTakenCanvas.enabled = true;
         yield return new WaitForSeconds(impactTime);
-        impactCanvas.enabled = false;
+        damageTakenCanvas.enabled = false;
+    }
+
+    public void ShowDamageDone()
+    {
+        StartCoroutine(ShowHitMarker());
+    }
+
+    IEnumerator ShowHitMarker()
+    {
+        damageDoneCanvas.enabled = true;
+        yield return new WaitForSeconds(impactTime);
+        damageDoneCanvas.enabled = false;
     }
 
     // Update is called once per frame
