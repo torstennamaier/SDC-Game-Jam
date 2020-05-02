@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 654204214035214276}
   - component: {fileID: 6503805574401508006}
   - component: {fileID: 7845734264216648342}
+  - component: {fileID: 4619851857990524813}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -146,6 +147,7 @@ MonoBehaviour:
   scoreIncrease: 1
   deathPickUp: {fileID: 6253128821461147837, guid: e87eb2a4465893c409754e8c33bbee63,
     type: 3}
+  timeTillDestroy: 2
 --- !u!95 &6503805574401508006
 Animator:
   serializedVersion: 3
@@ -178,6 +180,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+--- !u!114 &4619851857990524813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3187210168056629508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab4434cd92f5642a03a22047a03cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactCanvas: {fileID: 0}
+  impactTime: 0.3
 --- !u!1001 &5908884267309391622
 PrefabInstance:
   m_ObjectHideFlags: 0
