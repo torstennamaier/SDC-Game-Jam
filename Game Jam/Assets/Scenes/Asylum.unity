@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: e355d2406ead6e145a7d123ab91e3903, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 17f26e561ae76bd45a0172a2eb71beb4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -675,7 +675,7 @@ Animator:
   m_GameObject: {fileID: 355784090}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 40bd824147fee82489e14ba305b04ce6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1510,8 +1510,8 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.25
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -4701,7 +4701,7 @@ Animator:
   m_GameObject: {fileID: 1466900404}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 28a7c71d21217204f97ab46393d0e81a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6343,6 +6343,71 @@ PrefabInstance:
       propertyPath: impactCanvas
       value: 
       objectReference: {fileID: 372521129}
+    - target: {fileID: 5018507039673086830, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.239
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885063553055819055, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7489675055529162556, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358127067351744893, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.747
+      objectReference: {fileID: 0}
     - target: {fileID: 8695449618408914717, guid: c0513f38d71c126459fddece39cf50bb,
         type: 3}
       propertyPath: m_Name
@@ -6423,5 +6488,10 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 204845702}
+    - target: {fileID: 8736244080777557411, guid: c0513f38d71c126459fddece39cf50bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0513f38d71c126459fddece39cf50bb, type: 3}
