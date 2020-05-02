@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class DoubleJump : MonoBehaviour
 {
-    [SerializeField] float doubleJumpForce = 30f;
+    [SerializeField] float doubleJumpForce = 100f;
+    [SerializeField] float timeTillSelfDestruct = 10f;
 
     RigidbodyFirstPersonController target;
     bool doubleJump = false;
@@ -16,6 +18,13 @@ public class DoubleJump : MonoBehaviour
     {
         target = FindObjectOfType<PlayerHealth>().GetComponent<RigidbodyFirstPersonController>();
         m_RigidBody = target.GetComponent<Rigidbody>();
+        StartCoroutine(SelfDestruct());
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(timeTillSelfDestruct);
+        Destroy(this);
     }
 
     // Update is called once per frame
