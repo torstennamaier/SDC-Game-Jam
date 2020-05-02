@@ -7,6 +7,8 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoint = 100f;
     [SerializeField] float scoreIncrease = 1f;
+    [SerializeField] GameObject deathPickUp;
+    [SerializeField] float timeTillDestroy = 2f;
 
     Transform target;
     bool isDead = false;
@@ -38,6 +40,7 @@ public class EnemyHealth : MonoBehaviour
             isDead = true;
             GetComponent<EnemyAI>().isDead = true;
             GetComponent<Animator>().SetTrigger("Die");
+            GetComponent<CapsuleCollider>().enabled = false;
             StartCoroutine(DestroyEnemy());
             target.GetComponent<Score>().IncreaseScore(scoreIncrease);
         }
@@ -45,7 +48,8 @@ public class EnemyHealth : MonoBehaviour
 
     IEnumerator DestroyEnemy()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timeTillDestroy);
+        Instantiate(deathPickUp, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

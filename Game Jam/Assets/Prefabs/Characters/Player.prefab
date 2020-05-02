@@ -57,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8157649969449228484}
   - component: {fileID: 2860288578909555890}
+  - component: {fileID: 1794095677}
   m_Layer: 0
   m_Name: Flashlight
   m_TagString: Untagged
@@ -89,8 +90,8 @@ Light:
   serializedVersion: 10
   m_Type: 0
   m_Shape: 0
-  m_Color: {r: 1, g: 0.8741453, b: 0, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 1, g: 0.95442104, b: 0.6367924, a: 1}
+  m_Intensity: 4
   m_Range: 20
   m_SpotAngle: 70
   m_InnerSpotAngle: 1
@@ -139,6 +140,21 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1794095677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4962584404138346706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1cbbb056b0f3a64a99e7b7f32c0f678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightDecay: 0.1
+  angleDecay: 1
+  minimumAngle: 40
 --- !u!114 &5909125233091534996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +229,8 @@ GameObject:
   - component: {fileID: 8695449619141954986}
   - component: {fileID: 8695449619141954985}
   - component: {fileID: 2723235883853750962}
+  - component: {fileID: 1478760101}
+  - component: {fileID: 1478760102}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -227,7 +245,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695449618408914717}
-  m_LocalRotation: {x: -0, y: 0.9658912, z: -0, w: -0.25894842}
+  m_LocalRotation: {x: 0, y: 0.965892, z: -0, w: -0.2589454}
   m_LocalPosition: {x: 82.94, y: 1.92, z: 30.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -379,6 +397,32 @@ MonoBehaviour:
     ammoAmount: 10
   - ammoType: 2
     ammoAmount: 10
+--- !u!114 &1478760101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695449618408914717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ab4434cd92f5642a03a22047a03cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impactCanvas: {fileID: 0}
+  impactTime: 0.3
+--- !u!114 &1478760102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8695449618408914717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7746f8ab8f8a4e409aa2c01ca3f44a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8695449618408914719
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,8 +450,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8695449618408914719}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.352, y: 0.6, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.35200113, y: 0.60000014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 653212937234979171}
