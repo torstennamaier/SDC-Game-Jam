@@ -69,9 +69,16 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(FPCamera.transform.position, FPCamera.transform.forward, out hit, range))
         {
             CreateHitImpact(hit);
-            EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
-            if (target == null) return;
-            target.TakeDamage(damage);
+            if (hit.transform.GetComponent<EnemyHealth>() != false)
+            {
+                EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
+                target.TakeDamage(damage);
+            }
+            else if (hit.transform.GetComponent<Clock>() != false)
+            {
+                Clock clock = hit.transform.GetComponent<Clock>();
+                clock.OnShot();
+            }
         }
         else
         {

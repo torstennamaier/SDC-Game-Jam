@@ -1,7 +1,7 @@
-﻿
-public enum AmmoType
+﻿public enum AmmoType
 {
     LMG,
     AR,
-    Sniper
+    Sniper,
+    Shotgun
 }

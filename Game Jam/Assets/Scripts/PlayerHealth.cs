@@ -6,6 +6,8 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float healthPoints = 100f;
 
+    bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,27 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    public void AddHealth(float healthAdded)
+    {
+        healthPoints += healthAdded;
+    }
+
+    public float GetHealth()
+    {
+        return healthPoints;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        if (isDead == true) return;
+        healthPoints -= Time.deltaTime;
+        print("Decreasing health");
+        if (healthPoints <= 0)
+        {
+            GetComponent<DeathHandler>().HandleDeath();
+            isDead = true;
+            print("Died");
+        }
     }
 }
