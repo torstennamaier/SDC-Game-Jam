@@ -191,7 +191,7 @@ MonoBehaviour:
   hitEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   ammoSlot: {fileID: 2723235883853750962}
   ammoType: 2
-  timeBetweenShots: 2
+  timeBetweenShots: 1
   ammoText: {fileID: 0}
 --- !u!114 &8695449618742936643
 MonoBehaviour:
@@ -212,7 +212,7 @@ MonoBehaviour:
   hitEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   ammoSlot: {fileID: 2723235883853750962}
   ammoType: 1
-  timeBetweenShots: 1
+  timeBetweenShots: 0.5
   ammoText: {fileID: 0}
 --- !u!1 &8695449618408914717
 GameObject:
@@ -392,11 +392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoSlots:
   - ammoType: 0
-    ammoAmount: 10
+    ammoAmount: 100
   - ammoType: 1
-    ammoAmount: 10
+    ammoAmount: 100
   - ammoType: 2
-    ammoAmount: 10
+    ammoAmount: 100
 --- !u!114 &1478760101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
   hitEffect: {fileID: 100010, guid: 031d08f52af1daa4f929b85221519426, type: 3}
   ammoSlot: {fileID: 2723235883853750962}
   ammoType: 0
-  timeBetweenShots: 0
+  timeBetweenShots: 0.1
   ammoText: {fileID: 0}
 --- !u!1001 &8695449618528959888
 PrefabInstance:
@@ -699,6 +699,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ak74m
       objectReference: {fileID: 0}
+    - target: {fileID: 1458046410508832, guid: cad07940ee7c44f419bbedb32b966f78, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4612571006016442, guid: cad07940ee7c44f419bbedb32b966f78, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.24
@@ -755,6 +759,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 95437604618649694, guid: cad07940ee7c44f419bbedb32b966f78,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a4087fed0d932cb4b964a78de673f9b3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cad07940ee7c44f419bbedb32b966f78, type: 3}
 --- !u!1 &8694585345323485545 stripped
@@ -1048,7 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: a71db0f05c28dbd48be777241911ffe2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: a71db0f05c28dbd48be777241911ffe2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1094,7 +1103,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 9500000, guid: a71db0f05c28dbd48be777241911ffe2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: df1ecc83aff763b46b98903a3b686dd8, type: 2}
+    m_RemovedComponents:
+    - {fileID: 11100000, guid: a71db0f05c28dbd48be777241911ffe2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a71db0f05c28dbd48be777241911ffe2, type: 3}
 --- !u!1 &8878603234558123363 stripped
 GameObject:

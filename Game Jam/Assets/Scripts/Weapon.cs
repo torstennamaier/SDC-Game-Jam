@@ -33,7 +33,7 @@ public class Weapon : MonoBehaviour
     void Update()
     {
         DisplayAmmo();
-        if (Input.GetButtonDown("Fire1") && canShoot == true)
+        if (Input.GetButton("Fire1") && canShoot == true)
         {
             StartCoroutine(Shoot());
         }
@@ -50,6 +50,7 @@ public class Weapon : MonoBehaviour
         canShoot = false;
         if (ammoSlot.ReturnAmmo(ammoType) > 0)
         {
+            GetComponent<Animator>().SetTrigger("Fire");
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceAmmo(ammoType);
