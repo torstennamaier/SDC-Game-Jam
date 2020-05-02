@@ -15,10 +15,10 @@ public class DisplayDamage : MonoBehaviour
 
     public void ShowDamageImpact()
     {
-        StartCoroutine(ShowSplatter());
+        StartCoroutine(ShowDamage());
     }
 
-    IEnumerator ShowSplatter()
+    IEnumerator ShowDamage()
     {
         impactCanvas.enabled = true;
         yield return new WaitForSeconds(impactTime);

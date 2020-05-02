@@ -73,6 +73,7 @@ public class Weapon : MonoBehaviour
             {
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 target.TakeDamage(damage);
+                target.GetComponent<DisplayDamage>().ShowDamageImpact();
             }
             else if (hit.transform.GetComponent<Clock>() != false)
             {
