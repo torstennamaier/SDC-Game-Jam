@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoint: 100
   scoreIncrease: 1
-  deathPickUp: {fileID: 6253128821461147837, guid: 65e61281f03f9a044b5cb7b6baa29ab7,
+  deathPickUp: {fileID: 7497166852062546887, guid: 65e61281f03f9a044b5cb7b6baa29ab7,
     type: 3}
   timeTillDestroy: 2
 --- !u!114 &770948288
