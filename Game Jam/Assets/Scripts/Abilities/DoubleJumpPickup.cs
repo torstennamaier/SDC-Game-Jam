@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickup : MonoBehaviour
+public class DoubleJumpPickup : MonoBehaviour
 {
-    [SerializeField] int ammoAmount = 5;
-    [SerializeField] AmmoType ammoType;
+    GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -19,13 +18,12 @@ public class Pickup : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            FindObjectOfType<Ammo>().IncreaseAmmo(ammoType, ammoAmount);
+            player.AddComponent<DoubleJump>();
             Destroy(gameObject);
         }
     }
-
 }

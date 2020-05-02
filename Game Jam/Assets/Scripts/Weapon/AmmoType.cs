@@ -1,7 +1,6 @@
 ﻿public enum AmmoType
 {
-    LMG,
+    Pistol,
     AR,
-    Sniper,
     Shotgun
 }

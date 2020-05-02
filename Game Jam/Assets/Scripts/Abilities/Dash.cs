@@ -19,7 +19,7 @@ public class Dash : MonoBehaviour
     {
         target = FindObjectOfType<PlayerHealth>().GetComponent<RigidbodyFirstPersonController>();
         m_RigidBody = target.GetComponent<Rigidbody>();
-        // StartCoroutine(SelfDestruct());
+        StartCoroutine(SelfDestruct());
     }
 
     IEnumerator SelfDestruct()
