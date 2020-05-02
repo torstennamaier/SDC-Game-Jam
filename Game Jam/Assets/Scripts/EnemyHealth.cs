@@ -6,13 +6,15 @@ using UnityEngine.AI;
 public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] float hitPoint = 100f;
+    [SerializeField] float scoreIncrease = 1f;
 
+    Transform target;
     bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        target = FindObjectOfType<PlayerHealth>().transform;
     }
 
     // Update is called once per frame
@@ -27,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
         {
             enabled = false;
             GetComponent<NavMeshAgent>().enabled = false;
-
+            return;
         }
         hitPoint -= damage;
         BroadcastMessage("OnDamageTaken");
@@ -36,6 +38,14 @@ public class EnemyHealth : MonoBehaviour
             isDead = true;
             GetComponent<EnemyAI>().isDead = true;
             GetComponent<Animator>().SetTrigger("Die");
+            StartCoroutine(DestroyEnemy());
+            target.GetComponent<Score>().IncreaseScore(scoreIncrease);
         }
+    }
+
+    IEnumerator DestroyEnemy()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }

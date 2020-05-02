@@ -38,12 +38,10 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isDead == true) return;
         healthPoints -= Time.deltaTime;
-        print("Decreasing health");
         if (healthPoints <= 0)
         {
             GetComponent<DeathHandler>().HandleDeath();
             isDead = true;
-            print("Died");
         }
     }
 }
