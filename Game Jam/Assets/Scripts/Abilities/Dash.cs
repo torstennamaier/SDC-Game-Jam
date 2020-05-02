@@ -35,7 +35,6 @@ public class Dash : MonoBehaviour
         {
             if(isDashing == false)
             {
-                print("Dashing");
                 m_RigidBody.drag = 0f;
                 m_RigidBody.AddRelativeForce(new Vector3(0f, 0f, dashForce), ForceMode.Impulse);
                 isDashing = true;

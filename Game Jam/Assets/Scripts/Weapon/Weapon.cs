@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] AmmoType ammoType;
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI ammoText;
+    [SerializeField] AudioSource shootSound;
 
     bool canShoot = true;
 
@@ -51,6 +52,10 @@ public class Weapon : MonoBehaviour
         if (ammoSlot.ReturnAmmo(ammoType) > 0)
         {
             GetComponent<Animator>().SetTrigger("Fire");
+            if (shootSound != null)
+            {
+                shootSound.Play();
+            }
             PlayMuzzleFlash();
             ProcessRaycast();
             ammoSlot.ReduceAmmo(ammoType);
