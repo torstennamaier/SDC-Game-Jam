@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
+
+public class Dash : MonoBehaviour
+{
+    float dashForce = 100f;
+    float dashCooldown = 1f;
+    float timeTillSelfDestruct = 20f;
+
+    RigidbodyFirstPersonController target;
+    bool isDashing = false;
+    Rigidbody m_RigidBody;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = FindObjectOfType<PlayerHealth>().GetComponent<RigidbodyFirstPersonController>();
+        m_RigidBody = target.GetComponent<Rigidbody>();
+        // StartCoroutine(SelfDestruct());
+    }
+
+    IEnumerator SelfDestruct()
+    {
+        yield return new WaitForSeconds(timeTillSelfDestruct);
+        Destroy(this);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire3"))
+        {
+            if(isDashing == false)
+            {
+                print("Dashing");
+                m_RigidBody.drag = 0f;
+                m_RigidBody.AddRelativeForce(new Vector3(0f, 0f, dashForce), ForceMode.Impulse);
+                isDashing = true;
+                StartCoroutine(StartDashCooldown());
+            }
+            else
+            {
+                return;
+            }
+        }
+    }
+
+    IEnumerator StartDashCooldown()
+    {
+        yield return new WaitForSeconds(dashCooldown);
+        isDashing = false;
+    }
+}
