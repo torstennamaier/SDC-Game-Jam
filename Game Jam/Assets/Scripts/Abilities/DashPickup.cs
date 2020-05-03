@@ -5,6 +5,7 @@ using UnityEngine;
 public class DashPickup : MonoBehaviour
 {
     GameObject player;
+    public AudioClip audioClip;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class DashPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(audioClip, other.transform.position);
             if (player.GetComponent<Dash>() != null)
             {
                 Destroy(player.GetComponent<Dash>());
