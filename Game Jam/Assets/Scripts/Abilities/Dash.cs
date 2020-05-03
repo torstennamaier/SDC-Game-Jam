@@ -14,6 +14,7 @@ public class Dash : MonoBehaviour
     bool isDashing = false;
     Rigidbody m_RigidBody;
     GameObject dashCanvas;
+    AudioSource dashSound;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,7 @@ public class Dash : MonoBehaviour
         m_RigidBody = target.GetComponent<Rigidbody>();
         StartCoroutine(SelfDestruct());
         FindObjectOfType<DashCanvas>().Enable();
+        dashSound = FindObjectOfType<JumpDashSound>().GetComponent<AudioSource>();
     }
 
     IEnumerator SelfDestruct()
@@ -42,6 +44,7 @@ public class Dash : MonoBehaviour
                 m_RigidBody.AddRelativeForce(new Vector3(0f, 0f, dashForce), ForceMode.Impulse);
                 isDashing = true;
                 StartCoroutine(StartDashCooldown());
+                dashSound.Play();
             }
             else
             {

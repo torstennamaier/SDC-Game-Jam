@@ -12,6 +12,7 @@ public class DoubleJump : MonoBehaviour
     RigidbodyFirstPersonController target;
     bool doubleJump = false;
     Rigidbody m_RigidBody;
+    AudioSource doubleJumpSound;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class DoubleJump : MonoBehaviour
         m_RigidBody = target.GetComponent<Rigidbody>();
         StartCoroutine(SelfDestruct());
         FindObjectOfType<DoubleJumpCanvas>().Enable();
+        doubleJumpSound = FindObjectOfType<JumpDashSound>().GetComponent<AudioSource>();
     }
 
     IEnumerator SelfDestruct()
@@ -40,6 +42,7 @@ public class DoubleJump : MonoBehaviour
                 m_RigidBody.velocity = new Vector3(m_RigidBody.velocity.x, 0f, m_RigidBody.velocity.z);
                 m_RigidBody.AddForce(new Vector3(0f, doubleJumpForce, 0f), ForceMode.Impulse);
                 doubleJump = true;
+                doubleJumpSound.Play();
             }
             else
             {
