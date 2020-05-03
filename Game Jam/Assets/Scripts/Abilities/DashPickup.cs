@@ -15,13 +15,17 @@ public class DashPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            if (player.GetComponent<Dash>() != null)
+            {
+                Destroy(player.GetComponent<Dash>());
+            }
             player.AddComponent<Dash>();
             Destroy(gameObject);
         }

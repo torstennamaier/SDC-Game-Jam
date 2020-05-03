@@ -22,6 +22,10 @@ public class DoubleJumpPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            if (player.GetComponent<DoubleJump>() != null)
+            {
+                Destroy(player.GetComponent<DoubleJump>());
+            }
             player.AddComponent<DoubleJump>();
             Destroy(gameObject);
         }
