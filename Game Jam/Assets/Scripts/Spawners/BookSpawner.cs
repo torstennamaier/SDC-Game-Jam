@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnClocks : MonoBehaviour
+public class BookSpawner : MonoBehaviour
 {
-    //This prefab clock is set manually from the unity editor
-    public GameObject clock;
+    //This prefab books is set manually from the unity editor
+    public GameObject[] bookPrefabs;
     //This is how long it takes before we start clocks
     public float spawnDelay = 2.0f;
     //This is how many seconds it is between each time we spawn a clock
@@ -20,7 +20,7 @@ public class SpawnClocks : MonoBehaviour
     void Start()
     {
         //When the game starts then we starts spawning enemies from the array assigned every spawnInterval number of seconds
-        InvokeRepeating("SpawnClock", spawnDelay, spawnInterval);
+        InvokeRepeating("SpawnBook", spawnDelay, spawnInterval);
 
     }
 
@@ -30,15 +30,17 @@ public class SpawnClocks : MonoBehaviour
 
     }
     //We will spawn a clock at a random x and z position, the y will always be the same
-    void SpawnClock()
+    void SpawnBook()
     {
+        int bookIndex = Random.Range(0, bookPrefabs.Length);
         Vector3 spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), spawnPosY, Random.Range(minSpawnZ, maxSpawnZ));
-        Instantiate(clock, spawnPos, clock.transform.rotation);
+        Instantiate(bookPrefabs[bookIndex], spawnPos, bookPrefabs[bookIndex].transform.rotation);
     }
 }
 
 /*Note from Daniel:  To make this script work we must maually assign a prefab to spawn from the unity editor.
  * The assigned prefab will be what the spawner creates.
  * We can use this same spawner scripts to spawn benificial items as well.  They would only spawn in a certain position though.*/
+
 
 
