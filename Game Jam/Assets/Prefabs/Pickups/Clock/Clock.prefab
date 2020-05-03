@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 8879936534599487052}
   - component: {fileID: 8879936534599487053}
   - component: {fileID: 8879936534599487042}
+  - component: {fileID: -1921594754025224145}
   m_Layer: 0
   m_Name: Clock
   m_TagString: Clock
@@ -140,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthAdded: 10
   turnSpeed: 5
+  clockShotSound: {fileID: 8300000, guid: b389e118d6c579c4c81f6cc1ded85639, type: 3}
 --- !u!136 &8879936534599487042
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -166,7 +168,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1bc5a67c02a169a4cb1d70b7ea73b465, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0

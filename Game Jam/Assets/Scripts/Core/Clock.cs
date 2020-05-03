@@ -6,6 +6,7 @@ public class Clock : MonoBehaviour
 {
     [SerializeField] float healthAdded = 10f;
     [SerializeField] float turnSpeed = 5f;
+    [SerializeField] AudioClip clockShotSound;
 
     PlayerHealth target;
 
@@ -24,6 +25,7 @@ public class Clock : MonoBehaviour
     public void OnShot()
     {
         target.AddHealth(healthAdded);
+        AudioSource.PlayClipAtPoint(clockShotSound, target.transform.position);
         Destroy(gameObject);
     }
 
