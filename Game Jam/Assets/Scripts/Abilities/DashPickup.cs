@@ -31,5 +31,13 @@ public class DashPickup : MonoBehaviour
             player.AddComponent<Dash>();
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Enemy")
+        {
+            return;
+        }
+        else 
+        {
+            Destroy(gameObject);
+        }
     }
 }
