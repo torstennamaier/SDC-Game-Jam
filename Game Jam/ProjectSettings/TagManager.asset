@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Book
   - Clock
+  - Enemy
   layers:
   - Default
   - TransparentFX
