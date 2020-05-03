@@ -16,6 +16,10 @@ public class BookSpawner : MonoBehaviour
     public float maxSpawnZ = 60.0f;
     public float minSpawnZ = 10f;
     public float spawnPosY = 25.0f;
+    //These are vairables which we will use to track how many books are in the scene already
+    private GameObject[] numberOfBooks;
+    public int maxBooks = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +36,15 @@ public class BookSpawner : MonoBehaviour
     //We will spawn a clock at a random x and z position, the y will always be the same
     void SpawnBook()
     {
-        int bookIndex = Random.Range(0, bookPrefabs.Length);
-        Vector3 spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), spawnPosY, Random.Range(minSpawnZ, maxSpawnZ));
-        Instantiate(bookPrefabs[bookIndex], spawnPos, bookPrefabs[bookIndex].transform.rotation);
+        numberOfBooks = GameObject.FindGameObjectsWithTag("Book");
+        if (numberOfBooks.Length <= maxBooks)
+        {
+            int bookIndex = Random.Range(0, bookPrefabs.Length);
+            Vector3 spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), spawnPosY, Random.Range(minSpawnZ, maxSpawnZ));
+            Instantiate(bookPrefabs[bookIndex], spawnPos, bookPrefabs[bookIndex].transform.rotation);
+        }
     }
+
 }
 
 /*Note from Daniel:  To make this script work we must maually assign a prefab to spawn from the unity editor.

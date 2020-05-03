@@ -16,6 +16,9 @@ public class SpawnClocks : MonoBehaviour
     public float maxSpawnZ = 60.0f;
     public float minSpawnZ = 10f;
     public float spawnPosY = 25.0f;
+    //These variables are used for making sure there is a limited number of clocks
+    private GameObject[] numberOfClocks;
+    public int maxClocks = 5;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,9 +35,12 @@ public class SpawnClocks : MonoBehaviour
     //We will spawn a clock at a random x and z position, the y will always be the same
     void SpawnClock()
     {
+        numberOfClocks = GameObject.FindGameObjectsWithTag("Clock");
+        if (numberOfClocks.Length <= maxClocks) { 
         Vector3 spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), spawnPosY, Random.Range(minSpawnZ, maxSpawnZ));
         Instantiate(clock, spawnPos, clock.transform.rotation);
     }
+}
 }
 
 /*Note from Daniel:  To make this script work we must maually assign a prefab to spawn from the unity editor.
