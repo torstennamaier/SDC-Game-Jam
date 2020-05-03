@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,6 @@ public class DisplayHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Text>().text = Mathf.Floor(target.GetHealth()).ToString();
+        GetComponent<TextMeshProUGUI>().text = Mathf.Floor(target.GetHealth()).ToString();
     }
 }
