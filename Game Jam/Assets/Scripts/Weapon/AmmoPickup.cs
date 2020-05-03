@@ -7,6 +7,8 @@ public class AmmoPickup : MonoBehaviour
     [SerializeField] int ammoAmount = 5;
     [SerializeField] AmmoType ammoType;
 
+    public AudioClip audioClip;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            AudioSource.PlayClipAtPoint(audioClip, other.transform.position);
             FindObjectOfType<Ammo>().IncreaseAmmo(ammoType, ammoAmount);
             Destroy(gameObject);
         }

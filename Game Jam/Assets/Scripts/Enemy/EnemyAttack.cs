@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-    PlayerHealth target;
     [SerializeField] float damage = 10f;
+
+    PlayerHealth target;
+    public AudioSource attackSound;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class EnemyAttack : MonoBehaviour
         if (target == null) return;
         target.TakeDamage(damage);
         target.GetComponent<DisplayDamage>().ShowDamageImpact();
+        attackSound.Play();
     }
 
     // Update is called once per frame

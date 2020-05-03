@@ -60,6 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoAmount: 6
   ammoType: 0
+  audioClip: {fileID: 8300000, guid: e63cc42a8a51aea4297237927285f9f8, type: 3}
 --- !u!1001 &8401512853566734666
 PrefabInstance:
   m_ObjectHideFlags: 0
