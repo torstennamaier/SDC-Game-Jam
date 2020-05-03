@@ -31,5 +31,11 @@ public class DashPickup : MonoBehaviour
             player.AddComponent<Dash>();
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Invisible Wall")
+            {
+                {
+                    Destroy(gameObject);
+                }
+            }
     }
 }

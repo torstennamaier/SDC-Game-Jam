@@ -31,5 +31,9 @@ public class DoubleJumpPickup : MonoBehaviour
             player.AddComponent<DoubleJump>();
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Invisible Wall")
+        {
+            Destroy(gameObject);
+        }
     }
 }
