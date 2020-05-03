@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Asylum.unity
     guid: 3eb91da75957d0846871f22f647a35a6
+  - enabled: 1
+    path: Assets/Scenes/Castle.unity
+    guid: db1bd4d08f878e7489d94dbb7fe29b41
   m_configObjects: {}

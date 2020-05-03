@@ -71,6 +71,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: book Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6886103013287067232, guid: f55670abc9ee906408bc250d947e24b2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 746d734ee5a9c1243840a2188c93d07b, type: 2}
     - target: {fileID: 8212267605792929967, guid: f55670abc9ee906408bc250d947e24b2,
         type: 3}
       propertyPath: m_LocalPosition.x

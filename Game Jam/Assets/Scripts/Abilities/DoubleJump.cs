@@ -19,11 +19,13 @@ public class DoubleJump : MonoBehaviour
         target = FindObjectOfType<PlayerHealth>().GetComponent<RigidbodyFirstPersonController>();
         m_RigidBody = target.GetComponent<Rigidbody>();
         StartCoroutine(SelfDestruct());
+        FindObjectOfType<DoubleJumpCanvas>().Enable();
     }
 
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(timeTillSelfDestruct);
+        FindObjectOfType<DoubleJumpCanvas>().Disable();
         Destroy(this);
     }
 

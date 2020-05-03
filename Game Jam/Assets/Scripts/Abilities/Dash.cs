@@ -13,6 +13,7 @@ public class Dash : MonoBehaviour
     RigidbodyFirstPersonController target;
     bool isDashing = false;
     Rigidbody m_RigidBody;
+    GameObject dashCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -20,11 +21,13 @@ public class Dash : MonoBehaviour
         target = FindObjectOfType<PlayerHealth>().GetComponent<RigidbodyFirstPersonController>();
         m_RigidBody = target.GetComponent<Rigidbody>();
         StartCoroutine(SelfDestruct());
+        FindObjectOfType<DashCanvas>().Enable();
     }
 
     IEnumerator SelfDestruct()
     {
         yield return new WaitForSeconds(timeTillSelfDestruct);
+        FindObjectOfType<DashCanvas>().Disable();
         Destroy(this);
     }
 
